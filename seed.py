@@ -1,6 +1,10 @@
 from datetime import date                        # For setting birth dates
 from app import app                               # Import Flask app
 from models import db, User, Account, Transaction  # Import models
+from config import Config
+
+
+
 
 
 def seed_database():

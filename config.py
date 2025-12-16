@@ -1,17 +1,13 @@
+# config.py
 import os
 
 class Config:
-    # Use Postgres in production, fallback to SQLite locally
-    SQLALCHEMY_DATABASE_URI = os.environ.get(
-        "DATABASE_URL",
-          "postgresql://<user>:<password>@<host>:<port>/<dbname>"
-    )
-
+    # Production: Postgres, fallback: SQLite locally
+    SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL") or "sqlite:///user.db"
     SQLALCHEMY_TRACK_MODIFICATIONS = False
-
-    # JWT settings
-    JWT_SECRET_KEY = os.environ.get("JWT_SECRET_KEY")  # Secret key
+    JWT_SECRET_KEY = os.environ.get("JWT_SECRET_KEY") or "supersecret"
     JWT_ACCESS_TOKEN_EXPIRES = 3600
+
 
 # class Config:
 #     DEBUG = True

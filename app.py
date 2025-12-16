@@ -29,7 +29,7 @@ app = Flask(__name__)                                 # Create Flask application
 CORS(app, origins=["https://bank-frontend-self.vercel.app"])
 # Create database configuration
 app.config.from_object(Config)                        # Load configuration from Config class
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///user.db"  # Override DB path for local SQLite
+# app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///user.db"  # Override DB path for local SQLite
 
 # Initialize database
 db.init_app(app)                                      # Link SQLAlchemy with this Flask app

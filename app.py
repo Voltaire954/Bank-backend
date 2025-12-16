@@ -26,7 +26,7 @@ from flask_cors import CORS
 app = Flask(__name__)                                 # Create Flask application
 
 
-CORS(app, resources={r"/*": {"origins": "http://localhost:5173"}})
+CORS(app, origins=["https://https://bank-frontend-xi.vercel.app/"])
 # Create database configuration
 app.config.from_object(Config)                        # Load configuration from Config class
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///user.db"  # Override DB path for local SQLite

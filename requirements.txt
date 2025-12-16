@@ -24,4 +24,5 @@ Flask
 Flask-SQLAlchemy
 Flask-JWT-Extended
 Flask-CORS
-psycopg2-binary==2.9.9
+psycopg[binary]
+

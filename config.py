@@ -4,7 +4,7 @@ class Config:
     # Use Postgres in production, fallback to SQLite locally
     SQLALCHEMY_DATABASE_URI = os.environ.get(
         "DATABASE_URL",
-        "sqlite:///bank.db"  # fallback for local dev
+          "postgresql://<user>:<password>@<host>:<port>/<dbname>"
     )
 
     SQLALCHEMY_TRACK_MODIFICATIONS = False

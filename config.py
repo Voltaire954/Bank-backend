@@ -1,10 +1,12 @@
 import os
 
-BASE_DIR = os.path.abspath(os.path.dirname(__file__))
-DB_PATH = os.path.join(BASE_DIR, "bank.db")
-
 class Config:
-    SQLALCHEMY_DATABASE_URI = f"sqlite:///{DB_PATH}"
+    # Use Postgres in production, fallback to SQLite locally
+    SQLALCHEMY_DATABASE_URI = os.environ.get(
+        "DATABASE_URL",
+        "sqlite:///bank.db"  # fallback for local dev
+    )
+
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
     # JWT settings
